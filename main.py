@@ -7,9 +7,9 @@ import time
 service = Service(executable_path="chromedriver.exe") # chromedriver.exe downloaded from https://sites.google.com/chromium.org/driver/
 driver = webdriver.Chrome(service=service)
 
-driver.current_window_handle
+# driver.current_window_handle
 
-# driver.get("<webpage>")
+driver.get("http://localhost:8000")
 
 # time.sleep(3)
 
