@@ -11,10 +11,10 @@ driver = webdriver.Chrome(service=service)
 
 driver.get("http://localhost:8000")
 
-# time.sleep(3)
+time.sleep(3)
 
-# input_element_reject = driver.find_element(By.CLASS_NAME, "<class>")
-# input_element_reject.send_keys(Keys.ENTER)
+link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page")
+link_to_test_page.click()
 
 # input_element = driver.find_element(By.CLASS_NAME, "<class>")
 # input_element.send_keys("test 123" + Keys.ENTER)
