@@ -31,10 +31,17 @@ link_to_test_page.click()
 # st_blue_button = driver.find_element(By.CLASS_NAME, "button-blue")
 # st_blue_button.click()
 
+time.sleep(2)
+
+#Type something into a search bar
+st_search_bar = driver.find_element(By.ID, "st-sb0").send_keys("Hello, World!")
+
+time.sleep(2)
+
 # Go back to the main page
 link_to_test_page = driver.find_element(By.LINK_TEXT, "AZ Main Page")
 link_to_test_page.click()
 
-time.sleep(10)
+time.sleep(2)
 
 driver.quit()
