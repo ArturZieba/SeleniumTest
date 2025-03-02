@@ -18,19 +18,13 @@ time.sleep(1)
 link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
 
 # Click the button elements
-# st_red_button = driver.find_element(By.CLASS_NAME, "")
-# st_red_button.click()
+st_red_button = driver.find_element(By.ID, "st-b0").click()
+time.sleep(1)
 
-# time.sleep(2)
+st_green_button = driver.find_element(By.ID, "st-b1").click()
+time.sleep(1)
 
-# st_green_button = driver.find_element(By.CLASS_NAME, "")
-# st_green_button.click()
-
-# time.sleep(1)
-
-# st_blue_button = driver.find_element(By.CLASS_NAME, "")
-# st_blue_button.click()
-
+st_blue_button = driver.find_element(By.ID, "st-b2").click()
 time.sleep(1)
 
 # Type something into a search bar
