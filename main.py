@@ -17,6 +17,8 @@ time.sleep(1)
 # Open the page with Selenium test elements
 link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
 
+# Implement later - open JS Console on browser open
+
 # Click the button elements
 st_red_button = driver.find_element(By.ID, "st-b0").click()
 time.sleep(1)
@@ -28,7 +30,18 @@ st_blue_button = driver.find_element(By.ID, "st-b2").click()
 time.sleep(1)
 
 # Type something into a search bar
-st_search_bar = driver.find_element(By.ID, "st-sb0").send_keys("Hello, World!")
+st_search_bar0 = driver.find_element(By.ID, "st-sb0")
+st_search_bar0.send_keys("Hello, World!")
+time.sleep(1)
+
+# Copy contents of one search bar into another
+st_search_bar0.send_keys(Keys.CONTROL, "a")
+time.sleep(1)
+st_search_bar0.send_keys(Keys.CONTROL, "c")
+time.sleep(1)
+
+st_search_bar1 = driver.find_element(By.ID, "st-sb1")
+st_search_bar1.send_keys(Keys.CONTROL, "v")
 time.sleep(1)
 
 # Click through the radio buttons
