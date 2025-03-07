@@ -1,23 +1,26 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
+# Open Dev Tools
+chrome_options = Options()
+chrome_options.add_argument("--auto-open-devtools-for-tabs")
+
 service = Service(executable_path="chromedriver.exe") # chromedriver.exe downloaded from https://sites.google.com/chromium.org/driver/
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
-# driver.current_window_handle
-
+# Open the browser on http://localhost:8000
 driver.get("http://localhost:8000")
-
 time.sleep(1)
 
 # Open the page with Selenium test elements
 link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
-
-# Implement later - open JS Console on browser open
+time.sleep(1)
 
 # Click the button elements
 st_red_button = driver.find_element(By.ID, "st-b0").click()
@@ -36,6 +39,7 @@ time.sleep(1)
 
 # Copy contents of one search bar into another
 st_search_bar0.send_keys(Keys.CONTROL, "a")
+st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
 time.sleep(1)
 st_search_bar0.send_keys(Keys.CONTROL, "c")
 time.sleep(1)
