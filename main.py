@@ -62,19 +62,11 @@ time.sleep(1)
 st_select_list = driver.find_element(By.ID, "st-sl0")
 select_element_sl0 = Select(st_select_list)
 
-select_element_sl0.select_by_value('option1')
-time.sleep(1)
+select_element_sl0_options = select_element_sl0.options
 
-select_element_sl0.select_by_value('option2')
-time.sleep(1)
-
-select_element_sl0.select_by_value('option3')
-time.sleep(1)
-
-select_element_sl0.select_by_value('option4')
-time.sleep(1)
-
-# Possible to do with a loop?
+for option in select_element_sl0_options:
+    select_element_sl0.select_by_value(option.get_attribute('value'))
+    time.sleep(1)
 
 # Go back to the main page
 link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
