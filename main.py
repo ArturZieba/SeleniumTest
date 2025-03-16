@@ -68,9 +68,20 @@ for option in select_element_sl0_options:
     select_element_sl0.select_by_value(option.get_attribute('value'))
     time.sleep(1)
 
+# Enter log in information
+st_login_username0 = driver.find_element(By.ID, "st-lf0-un0")
+st_login_username0.send_keys("BobOfficial")
+time.sleep(1)
+
+st_login_password0 = driver.find_element(By.ID, "st-lf0-pw0")
+st_login_password0.send_keys("Password123")
+time.sleep(1)
+
+st_login_submit_0 = driver.find_element(By.ID, "st-lf0-s0").click()
+time.sleep(1)
+
 # Go back to the main page
 link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
-
 time.sleep(1)
 
 driver.quit()
