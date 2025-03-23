@@ -5,7 +5,9 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
+from shutil import copyfileobj
 import time
+from urllib.request import urlopen
 
 # Open Dev Tools
 chrome_options = Options()
@@ -20,7 +22,13 @@ time.sleep(1)
 
 # Open the page with Selenium test elements
 link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
-time.sleep(1)
+time.sleep(3)
+
+# Selenium Test Page code for checking here:
+
+
+
+#####
 
 # Click the button elements
 st_red_button = driver.find_element(By.ID, "st-b0").click()
@@ -78,6 +86,14 @@ st_login_password0.send_keys("Password123")
 time.sleep(1)
 
 st_login_submit_0 = driver.find_element(By.ID, "st-lf0-s0").click()
+time.sleep(1)
+
+# Download an image
+st_image0_url = driver.find_element(By.ID, "st-img0").get_attribute("src")
+time.sleep(1)
+
+with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as out_file:
+    copyfileobj(in_stream, out_file)
 time.sleep(1)
 
 # Go back to the main page
