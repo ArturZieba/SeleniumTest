@@ -26,7 +26,23 @@ time.sleep(3)
 
 # Selenium Test Page code for checking here:
 
+driver.execute_script("document.querySelector('#st-af0').play();")
+time.sleep(0.5)
+driver.execute_script("document.querySelector('#st-af0').volume = 0.5;")
+time.sleep(0.5)
+driver.execute_script("document.querySelector('#st-af0').pause();")
+time.sleep(0.5)
+driver.execute_script("document.querySelector('#st-af0').play();")
+time.sleep(4)
+driver.execute_script("document.querySelector('#st-af1').play();")
+time.sleep(5)
+driver.execute_script("document.querySelector('#st-af2').play();")
+time.sleep(5)
 
+# Add a test for lists
+# Add a test for table
+# Add a test for color picker
+# Add some additional test for audio (ramping sound up/down with a loop?)
 
 #####
 
