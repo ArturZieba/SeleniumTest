@@ -9,6 +9,20 @@ from shutil import copyfileobj
 import time
 from urllib.request import urlopen
 
+# Class with ANSI escape codes
+class FontModifiers:
+    DEFAULT = '\033[0m' # Restore default font
+    BOLD = '\033[1m' # Make font bold
+    BLACK = '\033[90m' # Change font color to black
+    RED = '\033[91m' # Change font color to red
+    GREEN = '\033[92m' # Change font color to green
+    YELLOW = '\033[93m' # Change font color to yellow
+    BLUE = '\033[94m' # Change font color to blue
+    MAGENTA = '\033[95m' # Change font color to magenta
+    CYAN = '\033[96m' # Change font color to cyan
+    WHITE = '\033[97m' # Change font color to white
+
+
 # Open Dev Tools
 chrome_options = Options()
 chrome_options.add_argument("--auto-open-devtools-for-tabs")
@@ -27,6 +41,18 @@ time.sleep(3)
 ##### 
 # Selenium Test Page code for checking here:
 
+# print(FontModifiers.BOLD + "BOLD" + FontModifiers.DEFAULT)
+# print(FontModifiers.BLACK + "BLACK" + FontModifiers.DEFAULT)
+# print(FontModifiers.RED + "RED" + FontModifiers.DEFAULT)
+# print(FontModifiers.GREEN + "GREEN" + FontModifiers.DEFAULT)
+# print(FontModifiers.YELLOW + "YELLOW" + FontModifiers.DEFAULT)
+# print(FontModifiers.BLUE + "BLUE" + FontModifiers.DEFAULT)
+# print(FontModifiers.MAGENTA + "MAGENTA" + FontModifiers.DEFAULT)
+# print(FontModifiers.CYAN + "CYAN" + FontModifiers.DEFAULT)
+# print(FontModifiers.WHITE + "WHITE" + FontModifiers.DEFAULT)
+# print(FontModifiers.BOLD + FontModifiers.RED + "BOLD RED" + FontModifiers.DEFAULT)
+
+# Move FontModifiers to separate file along with its test?
 # Try/else to verify the tests executed?
 # Log to a file?
 # Add a test for lists
@@ -121,7 +147,7 @@ link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
 time.sleep(1)
 
 # Confirm execution of the whole file
-print("ALL SCRIPTS EXECUTED, SHUTTING DOWN.")
+print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED, SHUTTING DOWN." + FontModifiers.DEFAULT)
 time.sleep(3)
 
 driver.quit()
