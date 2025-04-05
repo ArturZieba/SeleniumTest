@@ -24,21 +24,11 @@ time.sleep(1)
 link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
 time.sleep(3)
 
+##### 
 # Selenium Test Page code for checking here:
 
-driver.execute_script("document.querySelector('#st-af0').play();")
-time.sleep(0.5)
-driver.execute_script("document.querySelector('#st-af0').volume = 0.5;")
-time.sleep(0.5)
-driver.execute_script("document.querySelector('#st-af0').pause();")
-time.sleep(0.5)
-driver.execute_script("document.querySelector('#st-af0').play();")
-time.sleep(4)
-driver.execute_script("document.querySelector('#st-af1').play();")
-time.sleep(5)
-driver.execute_script("document.querySelector('#st-af2').play();")
-time.sleep(5)
-
+# Try/else to verify the tests executed?
+# Log to a file?
 # Add a test for lists
 # Add a test for table
 # Add a test for color picker
@@ -112,8 +102,26 @@ with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as 
     copyfileobj(in_stream, out_file)
 time.sleep(1)
 
+# Play through different audio elements
+driver.execute_script("document.querySelector('#st-af0').play();")
+time.sleep(0.5)
+driver.execute_script("document.querySelector('#st-af0').volume = 0.5;")
+time.sleep(0.5)
+driver.execute_script("document.querySelector('#st-af0').pause();")
+time.sleep(0.5)
+driver.execute_script("document.querySelector('#st-af0').play();")
+time.sleep(4)
+driver.execute_script("document.querySelector('#st-af1').play();")
+time.sleep(5)
+driver.execute_script("document.querySelector('#st-af2').play();")
+time.sleep(5)
+
 # Go back to the main page
 link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
 time.sleep(1)
+
+# Confirm execution of the whole file
+print("ALL SCRIPTS EXECUTED, SHUTTING DOWN.")
+time.sleep(3)
 
 driver.quit()
