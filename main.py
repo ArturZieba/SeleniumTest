@@ -52,8 +52,9 @@ time.sleep(3)
 # print(FontModifiers.WHITE + "WHITE" + FontModifiers.DEFAULT)
 # print(FontModifiers.BOLD + FontModifiers.RED + "BOLD RED" + FontModifiers.DEFAULT)
 
+# Add a counter to try/except for all cases
 # Move FontModifiers to separate file along with its test?
-# Try/else to verify the tests executed?
+# Try/except to verify the tests executed?
 # Log to a file?
 # Add a test for lists
 # Add a test for table
@@ -63,14 +64,19 @@ time.sleep(3)
 #####
 
 # Click the button elements
-st_red_button = driver.find_element(By.ID, "st-b0").click()
-time.sleep(1)
+try:
+    st_red_button = driver.find_element(By.ID, "st-b0").click()
+    time.sleep(1)
 
-st_green_button = driver.find_element(By.ID, "st-b1").click()
-time.sleep(1)
+    st_green_button = driver.find_element(By.ID, "st-b1").click()
+    time.sleep(1)
 
-st_blue_button = driver.find_element(By.ID, "st-b2").click()
-time.sleep(1)
+    st_blue_button = driver.find_element(By.ID, "st-b2").click()
+    time.sleep(1)
+
+    print(FontModifiers.GREEN + "Clicking button elements PASSED" + FontModifiers.DEFAULT)
+except:
+    print(FontModifiers.RED + "Clicking button elements FAILED" + FontModifiers.DEFAULT)
 
 # Type something into a search bar
 st_search_bar0 = driver.find_element(By.ID, "st-sb0")
@@ -147,6 +153,7 @@ link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
 time.sleep(1)
 
 # Confirm execution of the whole file
+# If statement with count of passed/failed tests?
 print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED, SHUTTING DOWN." + FontModifiers.DEFAULT)
 time.sleep(3)
 
