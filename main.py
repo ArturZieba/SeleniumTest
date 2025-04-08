@@ -9,6 +9,9 @@ from shutil import copyfileobj
 import time
 from urllib.request import urlopen
 
+test_count = 0 # Counter for total test cases, incremented before each try/except block with a test case
+fail_count = 0 # Counter for total failed test cases, incremented if an exception is hit in any try/except block with a test case
+
 # Class with ANSI escape codes
 class FontModifiers:
     DEFAULT = '\033[0m' # Restore default font
@@ -31,8 +34,13 @@ service = Service(executable_path="chromedriver.exe") # chromedriver.exe downloa
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
 # Open the browser on http://localhost:8000
-driver.get("http://localhost:8000")
-time.sleep(1)
+test_count += 1
+try:
+    driver.get("http://localhost:8000")
+    time.sleep(1)
+except:
+    print(FontModifiers.RED + "Opening browser on a webpage FAILED" + FontModifiers.DEFAULT)
+    fail_count += 1
 
 # Open the page with Selenium test elements
 link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
@@ -52,6 +60,7 @@ time.sleep(3)
 # print(FontModifiers.WHITE + "WHITE" + FontModifiers.DEFAULT)
 # print(FontModifiers.BOLD + FontModifiers.RED + "BOLD RED" + FontModifiers.DEFAULT)
 
+# Check unit testing
 # Add a counter to try/except for all cases
 # Move FontModifiers to separate file along with its test?
 # Try/except to verify the tests executed?
@@ -64,6 +73,7 @@ time.sleep(3)
 #####
 
 # Click the button elements
+test_count += 1
 try:
     st_red_button = driver.find_element(By.ID, "st-b0").click()
     time.sleep(1)
@@ -77,6 +87,7 @@ try:
     print(FontModifiers.GREEN + "Clicking button elements PASSED" + FontModifiers.DEFAULT)
 except:
     print(FontModifiers.RED + "Clicking button elements FAILED" + FontModifiers.DEFAULT)
+    fail_count += 1
 
 # Type something into a search bar
 st_search_bar0 = driver.find_element(By.ID, "st-sb0")
@@ -154,7 +165,11 @@ time.sleep(1)
 
 # Confirm execution of the whole file
 # If statement with count of passed/failed tests?
-print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED, SHUTTING DOWN." + FontModifiers.DEFAULT)
+print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED" + FontModifiers.DEFAULT)
+if (fail_count == 0):
+    print(FontModifiers.GREEN + "ALL " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
+else:
+    print(FontModifiers.RED + str((test_count - fail_count)) + " / " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
 time.sleep(3)
 
 driver.quit()
