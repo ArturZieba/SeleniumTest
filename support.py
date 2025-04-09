@@ -10,3 +10,16 @@ class FontModifiers:
     MAGENTA = '\033[95m' # Change font color to magenta
     CYAN = '\033[96m' # Change font color to cyan
     WHITE = '\033[97m' # Change font color to white
+
+# Selenium Test Page code for checking here:
+
+# print(FontModifiers.BOLD + "BOLD" + FontModifiers.DEFAULT)
+# print(FontModifiers.BLACK + "BLACK" + FontModifiers.DEFAULT)
+# print(FontModifiers.RED + "RED" + FontModifiers.DEFAULT)
+# print(FontModifiers.GREEN + "GREEN" + FontModifiers.DEFAULT)
+# print(FontModifiers.YELLOW + "YELLOW" + FontModifiers.DEFAULT)
+# print(FontModifiers.BLUE + "BLUE" + FontModifiers.DEFAULT)
+# print(FontModifiers.MAGENTA + "MAGENTA" + FontModifiers.DEFAULT)
+# print(FontModifiers.CYAN + "CYAN" + FontModifiers.DEFAULT)
+# print(FontModifiers.WHITE + "WHITE" + FontModifiers.DEFAULT)
+# print(FontModifiers.BOLD + FontModifiers.RED + "BOLD RED" + FontModifiers.DEFAULT)
