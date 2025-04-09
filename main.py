@@ -6,25 +6,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from shutil import copyfileobj
+from support import FontModifiers
 import time
 from urllib.request import urlopen
 
 test_count = 0 # Counter for total test cases, incremented before each try/except block with a test case
 fail_count = 0 # Counter for total failed test cases, incremented if an exception is hit in any try/except block with a test case
-
-# Class with ANSI escape codes
-class FontModifiers:
-    DEFAULT = '\033[0m' # Restore default font
-    BOLD = '\033[1m' # Make font bold
-    BLACK = '\033[90m' # Change font color to black
-    RED = '\033[91m' # Change font color to red
-    GREEN = '\033[92m' # Change font color to green
-    YELLOW = '\033[93m' # Change font color to yellow
-    BLUE = '\033[94m' # Change font color to blue
-    MAGENTA = '\033[95m' # Change font color to magenta
-    CYAN = '\033[96m' # Change font color to cyan
-    WHITE = '\033[97m' # Change font color to white
-
 
 # Open Dev Tools
 chrome_options = Options()
@@ -47,18 +34,6 @@ link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").clic
 time.sleep(3)
 
 ##### 
-# Selenium Test Page code for checking here:
-
-# print(FontModifiers.BOLD + "BOLD" + FontModifiers.DEFAULT)
-# print(FontModifiers.BLACK + "BLACK" + FontModifiers.DEFAULT)
-# print(FontModifiers.RED + "RED" + FontModifiers.DEFAULT)
-# print(FontModifiers.GREEN + "GREEN" + FontModifiers.DEFAULT)
-# print(FontModifiers.YELLOW + "YELLOW" + FontModifiers.DEFAULT)
-# print(FontModifiers.BLUE + "BLUE" + FontModifiers.DEFAULT)
-# print(FontModifiers.MAGENTA + "MAGENTA" + FontModifiers.DEFAULT)
-# print(FontModifiers.CYAN + "CYAN" + FontModifiers.DEFAULT)
-# print(FontModifiers.WHITE + "WHITE" + FontModifiers.DEFAULT)
-# print(FontModifiers.BOLD + FontModifiers.RED + "BOLD RED" + FontModifiers.DEFAULT)
 
 # Check unit testing
 # Add a counter to try/except for all cases
