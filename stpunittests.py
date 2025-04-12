@@ -64,8 +64,7 @@ def type_in_search_bar():
     st_search_bar0.send_keys("Hello, World!")
     time.sleep(1)
 
-# Copy contents of one search bar into another
-def copy_paste_search_bars():
+    # Copy contents of one search bar into another
     st_search_bar0.send_keys(Keys.CONTROL, "a")
     st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
     time.sleep(1)
@@ -140,11 +139,14 @@ def stp_to_main():
     link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
 time.sleep(1)
 
-# Confirm execution of the whole file
-# If statement with count of passed/failed tests?
-print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED" + FontModifiers.DEFAULT)
-# if (fail_count == 0):
-#     print(FontModifiers.GREEN + "ALL " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
-# else:
-#     print(FontModifiers.RED + str((test_count - fail_count)) + " / " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
-time.sleep(3)
+def finish_test_run():
+    # Confirm execution of the whole file
+    # If statement with count of passed/failed tests?
+    print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED" + FontModifiers.DEFAULT)
+    # if (fail_count == 0):
+    #     print(FontModifiers.GREEN + "ALL " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
+    # else:
+    #     print(FontModifiers.RED + str((test_count - fail_count)) + " / " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
+    time.sleep(3)
+
+    driver.quit()
