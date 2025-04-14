@@ -11,6 +11,8 @@ class FontModifiers:
     CYAN = '\033[96m' # Change font color to cyan
     WHITE = '\033[97m' # Change font color to white
 
+# Add a wrapper that returns modified string without having to add the values manually?
+
 # Test of all font options:
 print(FontModifiers.BOLD + "BOLD" + FontModifiers.DEFAULT)
 print(FontModifiers.BLACK + "BLACK" + FontModifiers.DEFAULT)
