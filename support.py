@@ -11,47 +11,47 @@ class FontModifiers:
     CYAN = '\033[96m' # Change font color to cyan
     WHITE = '\033[97m' # Change font color to white
 
-def bold(text):
+def font_bold(text):
     print(FontModifiers.BOLD + text + FontModifiers.DEFAULT)
 
-def black(text):
+def font_black(text):
     print(FontModifiers.BLACK + text + FontModifiers.DEFAULT)
 
-def red(text):
+def font_red(text):
     print(FontModifiers.RED + text + FontModifiers.DEFAULT)
 
-def green(text):
+def font_green(text):
     print(FontModifiers.GREEN + text + FontModifiers.DEFAULT)
 
-def yellow(text):
+def font_yellow(text):
     print(FontModifiers.YELLOW + text + FontModifiers.DEFAULT)
 
-def blue(text):
+def font_blue(text):
     print(FontModifiers.BLUE + text + FontModifiers.DEFAULT)
 
-def magenta(text):
+def font_magenta(text):
     print(FontModifiers.MAGENTA + text + FontModifiers.DEFAULT)
 
-def cyan(text):
+def font_cyan(text):
     print(FontModifiers.CYAN + text + FontModifiers.DEFAULT)
 
-def white(text):
+def font_white(text):
     print(FontModifiers.WHITE + text + FontModifiers.DEFAULT)
 
-def bold_red(text):
+def font_bold_red(text):
     print(FontModifiers.BOLD + FontModifiers.RED + text + FontModifiers.DEFAULT)
 
 # Test of all font options:
-bold("BOLD")
-black("BLACK")
-red("RED")
-green("GREEN")
-yellow("YELLOW")
-blue("BLUE")
-magenta("MAGENTA")
-cyan("CYAN")
-white("WHITE")
-bold_red("BOLD RED")
+font_bold("BOLD")
+font_black("BLACK")
+font_red("RED")
+font_green("GREEN")
+font_yellow("YELLOW")
+font_blue("BLUE")
+font_magenta("MAGENTA")
+font_cyan("CYAN")
+font_white("WHITE")
+font_bold_red("BOLD RED")
 
 # print(FontModifiers.BOLD + "BOLD" + FontModifiers.DEFAULT)
 # print(FontModifiers.BLACK + "BLACK" + FontModifiers.DEFAULT)
