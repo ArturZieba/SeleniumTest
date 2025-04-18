@@ -23,7 +23,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 class Tests(unittest.TestCase):
     @classmethod
     def setUpClass:
-        print(FontModifiers.CYAN + "SCRIPTS EXECUTION START" + FontModifiers.DEFAULT)
+        FontModifiers.font_cyan("SCRIPTS EXECUTION START")
     
     # Open the browser on http://localhost:8000
     def launch_browser():
@@ -145,15 +145,15 @@ class Tests(unittest.TestCase):
     def finish_test_run():
         # Confirm execution of the whole file
         # If statement with count of passed/failed tests?
-        print(FontModifiers.CYAN + "ALL SCRIPTS EXECUTED" + FontModifiers.DEFAULT)
+        FontModifiers.font_cyan("ALL SCRIPTS EXECUTED")
         # if (fail_count == 0):
-        #     print(FontModifiers.GREEN + "ALL " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
+        #     FontModifiers.font_green("ALL " + str(test_count) + " TEST CASES PASSED")
         # else:
-        #     print(FontModifiers.RED + str((test_count - fail_count)) + " / " + str(test_count) + " TEST CASES PASSED" + FontModifiers.DEFAULT)
+        #     FontModifiers.font_red(str((test_count - fail_count)) + " / " + str(test_count) + " TEST CASES PASSED")
         time.sleep(3)
     
         driver.quit()
         
     @classmethod
     def tearDownClass:
-        print(FontModifiers.CYAN + "END OF UNIT TESTS" + FontModifiers.DEFAULT)
+        FontModifiers.font_cyan("END OF UNIT TESTS")
