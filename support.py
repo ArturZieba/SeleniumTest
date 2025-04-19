@@ -11,6 +11,9 @@ class FontModifiers:
     CYAN = '\033[96m' # Change font color to cyan
     WHITE = '\033[97m' # Change font color to white
 
+#####
+# Functions printing text with certain font modifications using ANSI escape codes
+
 def font_bold(text):
     print(FontModifiers.BOLD + text + FontModifiers.DEFAULT)
 
@@ -41,6 +44,8 @@ def font_white(text):
 def font_bold_red(text):
     print(FontModifiers.BOLD + FontModifiers.RED + text + FontModifiers.DEFAULT)
 
+#####
+
 # Test of all font options:
 font_bold("BOLD")
 font_black("BLACK")
@@ -52,14 +57,3 @@ font_magenta("MAGENTA")
 font_cyan("CYAN")
 font_white("WHITE")
 font_bold_red("BOLD RED")
-
-# print(FontModifiers.BOLD + "BOLD" + FontModifiers.DEFAULT)
-# print(FontModifiers.BLACK + "BLACK" + FontModifiers.DEFAULT)
-# print(FontModifiers.RED + "RED" + FontModifiers.DEFAULT)
-# print(FontModifiers.GREEN + "GREEN" + FontModifiers.DEFAULT)
-# print(FontModifiers.YELLOW + "YELLOW" + FontModifiers.DEFAULT)
-# print(FontModifiers.BLUE + "BLUE" + FontModifiers.DEFAULT)
-# print(FontModifiers.MAGENTA + "MAGENTA" + FontModifiers.DEFAULT)
-# print(FontModifiers.CYAN + "CYAN" + FontModifiers.DEFAULT)
-# print(FontModifiers.WHITE + "WHITE" + FontModifiers.DEFAULT)
-# print(FontModifiers.BOLD + FontModifiers.RED + "BOLD RED" + FontModifiers.DEFAULT)
