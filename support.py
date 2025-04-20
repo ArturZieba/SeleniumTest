@@ -47,13 +47,13 @@ def font_bold_red(text):
 #####
 
 # Test of all font options:
-font_bold("BOLD")
-font_black("BLACK")
-font_red("RED")
-font_green("GREEN")
-font_yellow("YELLOW")
-font_blue("BLUE")
-font_magenta("MAGENTA")
-font_cyan("CYAN")
-font_white("WHITE")
-font_bold_red("BOLD RED")
+# font_bold("BOLD")
+# font_black("BLACK")
+# font_red("RED")
+# font_green("GREEN")
+# font_yellow("YELLOW")
+# font_blue("BLUE")
+# font_magenta("MAGENTA")
+# font_cyan("CYAN")
+# font_white("WHITE")
+# font_bold_red("BOLD RED")

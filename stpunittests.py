@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import Select
 from shutil import copyfileobj
 from support import FontModifiers
 import time
+import unittest
 from urllib.request import urlopen
 
 
@@ -22,7 +23,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 
 class Tests(unittest.TestCase):
     @classmethod
-    def setUpClass:
+    def setUpClass():
         FontModifiers.font_cyan("SCRIPTS EXECUTION START")
     
     # Open the browser on http://localhost:8000
@@ -155,5 +156,8 @@ class Tests(unittest.TestCase):
         driver.quit()
         
     @classmethod
-    def tearDownClass:
+    def tearDownClass():
         FontModifiers.font_cyan("END OF UNIT TESTS")
+
+if __name__ == '__main__':
+    unittest.main()
