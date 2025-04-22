@@ -1,4 +1,4 @@
-import stpunittests
+#import stpunittests
 import unittest
 
 class TestUnitTesting(unittest.TestCase):
@@ -10,6 +10,12 @@ class TestUnitTesting(unittest.TestCase):
             print("Works")
         except:
             assert False, "Didn't do something"
+
+    def test_try_another(self):
+        try:
+            print("Works1")
+        except:
+            assert False, "Didn't do something1"
     
     def tearDown(self):
         print("Finished running unit tests")
