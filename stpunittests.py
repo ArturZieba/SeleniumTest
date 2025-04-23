@@ -17,27 +17,28 @@ from urllib.request import urlopen
 
 class Tests(unittest.TestCase):
     def setUp(self):
-        FontModifiers.font_cyan("SCRIPTS EXECUTION START")
-
-        # Open Dev Tools
-        chrome_options = Options()
-        chrome_options.add_argument("--auto-open-devtools-for-tabs")
-
-        service = Service(executable_path="chromedriver.exe") # chromedriver.exe downloaded from https://sites.google.com/chromium.org/driver/
-        self.driver = webdriver.Chrome(service=service, options=chrome_options)
-    
-    # Open the browser on http://localhost:8000
-    def test_launch_browser(self):
         try:
+            FontModifiers.font_cyan("SCRIPTS EXECUTION START")
+
+            # Open Dev Tools
+            chrome_options = Options()
+            chrome_options.add_argument("--auto-open-devtools-for-tabs")
+
+            service = Service(executable_path="chromedriver.exe") # chromedriver.exe downloaded from https://sites.google.com/chromium.org/driver/
+            self.driver = webdriver.Chrome(service=service, options=chrome_options)
+
             self.driver.get("http://localhost:8000")
-            time.sleep(1)
+            time.sleep(1) # Chceck WebDriverWait?
         except:
-            assert False, FontModifiers.font_bold_red("Didn't reach website")
+            assert False, FontModifiers.font_bold_red("Didn't reach website") # Rewrite?   
     
     # Open the page with Selenium test elements
-    #def main_to_stp(self):
-    #    link_to_test_page = driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
-    #    time.sleep(3)
+    def test_main_to_stp(self):
+        try:
+            link_to_test_page = self.driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
+            time.sleep(3) # Chceck WebDriverWait?
+        except:
+            assert False, FontModifiers.font_bold_red("Clicking Selenium Test Page button failed") # Rewrite?   
     
     ##### 
     
