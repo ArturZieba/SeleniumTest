@@ -29,16 +29,12 @@ class Tests(unittest.TestCase):
 
             self.driver.get("http://localhost:8000")
             time.sleep(1) # Chceck WebDriverWait?
-        except:
-            assert False, FontModifiers.font_bold_red("Didn't reach website") # Rewrite?   
-    
-    # Open the page with Selenium test elements
-    def test_main_to_stp(self):
-        try:
+
+            # Open the page with Selenium test elements
             link_to_test_page = self.driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
-            time.sleep(3) # Chceck WebDriverWait?
+            time.sleep(3) # Chceck WebDriverWait
         except:
-            assert False, FontModifiers.font_bold_red("Clicking Selenium Test Page button failed") # Rewrite?   
+            assert False, FontModifiers.font_bold_red("Didn't reach Selenium Test Page") # Rewrite?   
     
     ##### 
     
@@ -56,15 +52,18 @@ class Tests(unittest.TestCase):
     #####
     
     # Click the button elements
-    #def click_buttons(self):
-    #    st_red_button = driver.find_element(By.ID, "st-b0").click()
-    #    time.sleep(1)
+    def test_click_buttons(self):
+        try:
+            st_red_button = self.driver.find_element(By.ID, "st-b0").click()
+            time.sleep(1) # Chceck WebDriverWait?
     
-    #    st_green_button = driver.find_element(By.ID, "st-b1").click()
-    #    time.sleep(1)
+            st_green_button = self.driver.find_element(By.ID, "st-b1").click()
+            time.sleep(1) # Chceck WebDriverWait?
     
-    #    st_blue_button = driver.find_element(By.ID, "st-b2").click()
-    #    time.sleep(1)
+            st_blue_button = self.driver.find_element(By.ID, "st-b2").click()
+            time.sleep(1) # Chceck WebDriverWait?
+        except:
+            assert False, FontModifiers.font_bold_red("Clicking Selenium Test Page button failed") # Rewrite?
     
     # Type something into a search bar
     #def type_in_search_bar(self):
