@@ -34,10 +34,11 @@ class Tests(unittest.TestCase):
             link_to_test_page = self.driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
             time.sleep(3) # Chceck WebDriverWait
         except:
-            assert False, FontModifiers.font_bold_red("Didn't reach Selenium Test Page") # Rewrite?   
+            assert False, FontModifiers.font_bold_red("Didn't reach Selenium Test Page") # Rewrite? AssertionError: None?  
     
     ##### 
     
+    # Change the unit tests to be executed one by one in a single browser window instead of launching multiple ones?
     # time.sleep value in a variable?
     # Check unit testing
     # Add a counter to try/except for all cases
@@ -63,24 +64,27 @@ class Tests(unittest.TestCase):
             st_blue_button = self.driver.find_element(By.ID, "st-b2").click()
             time.sleep(1) # Chceck WebDriverWait?
         except:
-            assert False, FontModifiers.font_bold_red("Clicking Selenium Test Page button failed") # Rewrite?
+            assert False, FontModifiers.font_bold_red("Clicking Selenium Test Page buttons failed") # Rewrite? AssertionError: None?
     
-    # Type something into a search bar
-    #def type_in_search_bar(self):
-    #    st_search_bar0 = driver.find_element(By.ID, "st-sb0")
-    #    st_search_bar0.send_keys("Hello, World!")
-    #    time.sleep(1)
-    
-        # Copy contents of one search bar into another
-    #    st_search_bar0.send_keys(Keys.CONTROL, "a")
-    #    st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
-    #    time.sleep(1)
-    #    st_search_bar0.send_keys(Keys.CONTROL, "c")
-    #    time.sleep(1)
-    
-    #    st_search_bar1 = driver.find_element(By.ID, "st-sb1")
-    #    st_search_bar1.send_keys(Keys.CONTROL, "v")
-    #    time.sleep(1)
+    # Type and copy/paste something into a search bar
+    def test_type_in_search_bar(self):
+        try:
+            st_search_bar0 = self.driver.find_element(By.ID, "st-sb0")
+            st_search_bar0.send_keys("Hello, World!")
+            time.sleep(1)
+        
+            # Copy contents of one search bar into another
+            st_search_bar0.send_keys(Keys.CONTROL, "a")
+            st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
+            time.sleep(1)
+            st_search_bar0.send_keys(Keys.CONTROL, "c")
+            time.sleep(1)
+        
+            st_search_bar1 = self.driver.find_element(By.ID, "st-sb1")
+            st_search_bar1.send_keys(Keys.CONTROL, "v")
+            time.sleep(1)
+        except:
+            assert False, FontModifiers.font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? AssertionError: None?
     
     # Click through the radio buttons
     #def click_radio_buttons(self):
