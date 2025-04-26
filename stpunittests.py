@@ -64,7 +64,7 @@ class Tests(unittest.TestCase):
             st_blue_button = self.driver.find_element(By.ID, "st-b2").click()
             time.sleep(1) # Chceck WebDriverWait?
         except:
-            assert False, FontModifiers.font_bold_red("Clicking Selenium Test Page buttons failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.font_bold_red("Clicking buttons failed") # Rewrite? AssertionError: None?
     
     # Type and copy/paste something into a search bar
     def test_type_in_search_bar(self):
@@ -87,15 +87,18 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? AssertionError: None?
     
     # Click through the radio buttons
-    #def click_radio_buttons(self):
-    #    st_radio_button0 = driver.find_element(By.ID, "st-rb1").click()
-    #    time.sleep(1)
-    
-    #    st_radio_button1 = driver.find_element(By.ID, "st-rb0").click()
-    #    time.sleep(1)
-    
-    #    st_radio_button2 = driver.find_element(By.ID, "st-rb2").click()
-    #    time.sleep(1)
+    def test_click_radio_buttons(self):
+        try:
+            st_radio_button0 = self.driver.find_element(By.ID, "st-rb1").click()
+            time.sleep(1)
+        
+            st_radio_button1 = self.driver.find_element(By.ID, "st-rb0").click()
+            time.sleep(1)
+        
+            st_radio_button2 = self.driver.find_element(By.ID, "st-rb2").click()
+            time.sleep(1)
+        except:
+            assert False, FontModifiers.font_bold_red("Clicking radio buttons failed") # Rewrite? AssertionError: None?
     
     # Go through all of the options on a select list
     #def select_list_select_all_options(self):
