@@ -18,7 +18,7 @@ from urllib.request import urlopen
 class Tests(unittest.TestCase):
     def setUp(self):
         try:
-            FontModifiers.font_cyan("SCRIPTS EXECUTION START")
+            FontModifiers.font_cyan("SCRIPTS EXECUTION START") # Rewrite?
 
             # Open Dev Tools
             chrome_options = Options()
@@ -101,15 +101,18 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.font_bold_red("Clicking radio buttons failed") # Rewrite? AssertionError: None?
     
     # Go through all of the options on a select list
-    #def select_list_select_all_options(self):
-    #    st_select_list = driver.find_element(By.ID, "st-sl0")
-    #    select_element_sl0 = Select(st_select_list)
-    
-    #    select_element_sl0_options = select_element_sl0.options
-    
-    #    for option in select_element_sl0_options:
-    #        select_element_sl0.select_by_value(option.get_attribute('value'))
-    #        time.sleep(1)
+    def test_select_list_select_all_options(self):
+        try:
+            st_select_list = self.driver.find_element(By.ID, "st-sl0")
+            select_element_sl0 = Select(st_select_list)
+        
+            select_element_sl0_options = select_element_sl0.options
+        
+            for option in select_element_sl0_options:
+                select_element_sl0.select_by_value(option.get_attribute('value'))
+                time.sleep(1)
+        except:
+            assert False, FontModifiers.font_bold_red("Selecting from a select list failed") # Rewrite? AssertionError: None?
     
     # Enter log in information
     #def use_login(self):
@@ -166,8 +169,8 @@ class Tests(unittest.TestCase):
     #    driver.quit()
         
     def tearDown(self):
-        FontModifiers.font_cyan("END OF UNIT TESTS")
-        self.driver.quit()
+        FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
+        self.driver.quit() # Is the browser restart on each case the best way to do it?
 
 if __name__ == '__main__':
     unittest.main()
