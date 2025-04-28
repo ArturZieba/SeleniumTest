@@ -115,17 +115,20 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.font_bold_red("Selecting from a select list failed") # Rewrite? AssertionError: None?
     
     # Enter log in information
-    #def use_login(self):
-    #    st_login_username0 = driver.find_element(By.ID, "st-lf0-un0")
-    #    st_login_username0.send_keys("BobOfficial")
-    #    time.sleep(1)
-    
-    #    st_login_password0 = driver.find_element(By.ID, "st-lf0-pw0")
-    #    st_login_password0.send_keys("Password123")
-    #    time.sleep(1)
-    
-    #    st_login_submit_0 = driver.find_element(By.ID, "st-lf0-s0").click()
-    #    time.sleep(1)
+    def test_use_login(self):
+        try:
+            st_login_username0 = self.driver.find_element(By.ID, "st-lf0-un0")
+            st_login_username0.send_keys("BobOfficial")
+            time.sleep(1)
+        
+            st_login_password0 = self.driver.find_element(By.ID, "st-lf0-pw0")
+            st_login_password0.send_keys("Password123")
+            time.sleep(1)
+        
+            st_login_submit_0 = self.driver.find_element(By.ID, "st-lf0-s0").click()
+            time.sleep(1)
+        except:
+            assert False, FontModifiers.font_bold_red("Testing login form failed") # Rewrite? AssertionError: None?    
     
     # Download an image
     #def download_image(self):
