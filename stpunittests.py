@@ -131,13 +131,16 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.font_bold_red("Testing login form failed") # Rewrite? AssertionError: None?    
     
     # Download an image
-    #def download_image(self):
-    #    st_image0_url = driver.find_element(By.ID, "st-img0").get_attribute("src")
-    #    time.sleep(1)
-    
-    #    with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as out_file:
-    #        copyfileobj(in_stream, out_file)
-    #    time.sleep(1)
+    def test_download_image(self):
+        try:
+            st_image0_url = self.driver.find_element(By.ID, "st-img0").get_attribute("src")
+            time.sleep(1)
+        
+            with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as out_file:
+                copyfileobj(in_stream, out_file)
+            time.sleep(1)
+        except:
+            assert False, FontModifiers.font_bold_red("Downloading an image failed") # Rewrite? AssertionError: None?  
     
     # Play through different audio elements
     #def play_audio_elements(self):
