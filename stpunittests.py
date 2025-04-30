@@ -143,19 +143,22 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.font_bold_red("Downloading an image failed") # Rewrite? AssertionError: None?  
     
     # Play through different audio elements
-    #def play_audio_elements(self):
-    #    driver.execute_script("document.querySelector('#st-af0').play();")
-    #    time.sleep(0.5)
-    #    driver.execute_script("document.querySelector('#st-af0').volume = 0.5;")
-    #    time.sleep(0.5)
-    #    driver.execute_script("document.querySelector('#st-af0').pause();")
-    #    time.sleep(0.5)
-    #    driver.execute_script("document.querySelector('#st-af0').play();")
-    #    time.sleep(4)
-    #    driver.execute_script("document.querySelector('#st-af1').play();")
-    #    time.sleep(5)
-    #    driver.execute_script("document.querySelector('#st-af2').play();")
-    #    time.sleep(5)
+    def test_play_audio_elements(self):
+        try:
+            self.driver.execute_script("document.querySelector('#st-af0').play();")
+            time.sleep(0.5)
+            self.driver.execute_script("document.querySelector('#st-af0').volume = 0.5;")
+            time.sleep(0.5)
+            self.driver.execute_script("document.querySelector('#st-af0').pause();")
+            time.sleep(0.5)
+            self.driver.execute_script("document.querySelector('#st-af0').play();")
+            time.sleep(4)
+            self.driver.execute_script("document.querySelector('#st-af1').play();")
+            time.sleep(5)
+            self.driver.execute_script("document.querySelector('#st-af2').play();")
+            time.sleep(5)
+        except:
+            assert False, FontModifiers.font_bold_red("Playing audio elements failed") # Rewrite? AssertionError: None?
     
     # Go back to the main page
     #def stp_to_main(self):
