@@ -161,9 +161,12 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.font_bold_red("Playing audio elements failed") # Rewrite? AssertionError: None?
     
     # Go back to the main page
-    #def stp_to_main(self):
-    #    link_to_main_page = driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
-    #time.sleep(1)
+    def test_stp_to_main(self):
+        try:
+            link_to_main_page = self.driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
+            time.sleep(1)
+        except:
+            assert False, FontModifiers.font_bold_red("Going back to main page failed") # Rewrite? AssertionError: None?
     
     #def finish_test_run(self):
         # Confirm execution of the whole file
