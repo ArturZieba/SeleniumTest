@@ -6,16 +6,20 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
 from shutil import copyfileobj
 from support import FontModifiers
 import time
 import unittest
 from urllib.request import urlopen
 
-
-
 class Tests(unittest.TestCase):
+    # Substitue explicit wait function for use instead of time.sleep()
+    def wait_for_element(self, by, identifier, condition, timeout = 15):
+        return WebDriverWait(self.driver, timeout).until(condition((by, identifier)))
+
     def setUp(self):
         try:
             FontModifiers.font_cyan("SCRIPTS EXECUTION START") # Rewrite?
@@ -28,11 +32,9 @@ class Tests(unittest.TestCase):
             self.driver = webdriver.Chrome(service=service, options=chrome_options)
 
             self.driver.get("http://localhost:8000")
-            time.sleep(1) # Chceck WebDriverWait?
 
             # Open the page with Selenium test elements
-            link_to_test_page = self.driver.find_element(By.LINK_TEXT, "Selenium Test Page").click()
-            time.sleep(3) # Chceck WebDriverWait
+            self.wait_for_element(By.LINK_TEXT, "Selenium Test Page", EC.element_to_be_clickable).click()
         except:
             assert False, FontModifiers.font_bold_red("Didn't reach Selenium Test Page") # Rewrite? AssertionError: None?  
     
