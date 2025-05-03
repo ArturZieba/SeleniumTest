@@ -57,14 +57,11 @@ class Tests(unittest.TestCase):
     # Click the button elements
     def test_click_buttons(self):
         try:
-            st_red_button = self.driver.find_element(By.ID, "st-b0").click()
-            time.sleep(1) # Chceck WebDriverWait?
+            self.wait_for_element(By.ID, "st-b0", EC.element_to_be_clickable).click()
     
-            st_green_button = self.driver.find_element(By.ID, "st-b1").click()
-            time.sleep(1) # Chceck WebDriverWait?
+            self.wait_for_element(By.ID, "st-b1", EC.element_to_be_clickable).click()
     
-            st_blue_button = self.driver.find_element(By.ID, "st-b2").click()
-            time.sleep(1) # Chceck WebDriverWait?
+            self.wait_for_element(By.ID, "st-b2", EC.element_to_be_clickable).click()
         except:
             assert False, FontModifiers.font_bold_red("Clicking buttons failed") # Rewrite? AssertionError: None?
     
