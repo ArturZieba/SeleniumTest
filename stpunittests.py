@@ -88,14 +88,11 @@ class Tests(unittest.TestCase):
     # Click through the radio buttons
     def test_click_radio_buttons(self):
         try:
-            st_radio_button0 = self.driver.find_element(By.ID, "st-rb1").click()
-            time.sleep(1)
+            self.wait_for_element(By.ID, "st-rb1", EC.element_to_be_clickable).click()
         
-            st_radio_button1 = self.driver.find_element(By.ID, "st-rb0").click()
-            time.sleep(1)
+            self.wait_for_element(By.ID, "st-rb0", EC.element_to_be_clickable).click()
         
-            st_radio_button2 = self.driver.find_element(By.ID, "st-rb2").click()
-            time.sleep(1)
+            self.wait_for_element(By.ID, "st-rb2", EC.element_to_be_clickable).click()
         except:
             assert False, FontModifiers.font_bold_red("Clicking radio buttons failed") # Rewrite? AssertionError: None?
     
