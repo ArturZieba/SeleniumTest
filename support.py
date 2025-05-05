@@ -15,36 +15,38 @@ class FontModifiers:
     # Functions printing text with certain font modifications using ANSI escape codes
 
     def font_bold(text):
-        print(FontModifiers.BOLD + text + FontModifiers.DEFAULT)
+        print(FontModifiers.BOLD + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_black(text):
-        print(FontModifiers.BLACK + text + FontModifiers.DEFAULT)
+        print(FontModifiers.BLACK + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_red(text):
-        print(FontModifiers.RED + text + FontModifiers.DEFAULT)
+        print(FontModifiers.RED + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_green(text):
-        print(FontModifiers.GREEN + text + FontModifiers.DEFAULT)
+        print(FontModifiers.GREEN + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_yellow(text):
-        print(FontModifiers.YELLOW + text + FontModifiers.DEFAULT)
+        print(FontModifiers.YELLOW + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_blue(text):
-        print(FontModifiers.BLUE + text + FontModifiers.DEFAULT)
+        print(FontModifiers.BLUE + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_magenta(text):
-        print(FontModifiers.MAGENTA + text + FontModifiers.DEFAULT)
+        print(FontModifiers.MAGENTA + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_cyan(text):
-        print(FontModifiers.CYAN + text + FontModifiers.DEFAULT)
+        print(FontModifiers.CYAN + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_white(text):
-        print(FontModifiers.WHITE + text + FontModifiers.DEFAULT)
+        print(FontModifiers.WHITE + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     def font_bold_red(text):
-        print(FontModifiers.BOLD + FontModifiers.RED + text + FontModifiers.DEFAULT)
+        print(FontModifiers.BOLD + FontModifiers.RED + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
 
     #####
+
+# Rewrite to run only if this file is run?
 
 # Test of all font options:
 # font_bold("BOLD")

@@ -22,7 +22,7 @@ class Tests(unittest.TestCase):
 
     def setUp(self):
         try:
-            FontModifiers.font_cyan("SCRIPTS EXECUTION START") # Rewrite?
+            FontModifiers.font_cyan(f"RUNNING UNIT TEST: {self._testMethodName}") # Rewrite?
 
             # Open Dev Tools
             chrome_options = Options()
@@ -178,6 +178,7 @@ class Tests(unittest.TestCase):
         
     def tearDown(self):
         FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
+        # Return information about test passing
         self.driver.quit() # Is the browser restart on each case the best way to do it?
 
 if __name__ == '__main__':
