@@ -15,41 +15,42 @@ class FontModifiers:
     # Functions printing text with certain font modifications using ANSI escape codes
 
     def font_bold(text):
-        print(FontModifiers.BOLD + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.BOLD}{text}{FontModifiers.DEFAULT}")
 
     def font_black(text):
-        print(FontModifiers.BLACK + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.BLACK}{text}{FontModifiers.DEFAULT}")
 
     def font_red(text):
-        print(FontModifiers.RED + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.RED}{text}{FontModifiers.DEFAULT}")
 
     def font_green(text):
-        print(FontModifiers.GREEN + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.GREEN}{text}{FontModifiers.DEFAULT}")
 
     def font_yellow(text):
-        print(FontModifiers.YELLOW + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.YELLOW}{text}{FontModifiers.DEFAULT}")
 
     def font_blue(text):
-        print(FontModifiers.BLUE + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.BLUE}{text}{FontModifiers.DEFAULT}")
 
     def font_magenta(text):
-        print(FontModifiers.MAGENTA + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.MAGENTA}{text}{FontModifiers.DEFAULT}")
 
     def font_cyan(text):
-        print(FontModifiers.CYAN + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.CYAN}{text}{FontModifiers.DEFAULT}") 
 
     def font_white(text):
-        print(FontModifiers.WHITE + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.WHITE}{text}{FontModifiers.DEFAULT}") 
 
     def font_bold_red(text):
-        print(FontModifiers.BOLD + FontModifiers.RED + text + FontModifiers.DEFAULT) # Rewrite to use an f-string?
+        print(f"{FontModifiers.BOLD}{FontModifiers.RED}{text}{FontModifiers.DEFAULT}")
 
     #####
 
 # Rewrite to run only if this file is run?
+# Check white spaces when printed
 
 # Test of all font options:
-# font_bold("BOLD")
+# FontModifiers.font_bold("BOLD")
 # font_black("BLACK")
 # font_red("RED")
 # font_green("GREEN")
