@@ -46,17 +46,15 @@ class FontModifiers:
 
     #####
 
-# Rewrite to run only if this file is run?
-# Check white spaces when printed
-
 # Test of all font options:
-# FontModifiers.font_bold("BOLD")
-# font_black("BLACK")
-# font_red("RED")
-# font_green("GREEN")
-# font_yellow("YELLOW")
-# font_blue("BLUE")
-# font_magenta("MAGENTA")
-# font_cyan("CYAN")
-# font_white("WHITE")
-# font_bold_red("BOLD RED")
+if __name__ == '__main__':
+    FontModifiers.font_bold("BOLD")
+    FontModifiers.font_black("BLACK")
+    FontModifiers.font_red("RED")
+    FontModifiers.font_green("GREEN")
+    FontModifiers.font_yellow("YELLOW")
+    FontModifiers.font_blue("BLUE")
+    FontModifiers.font_magenta("MAGENTA")
+    FontModifiers.font_cyan("CYAN")
+    FontModifiers.font_white("WHITE")
+    FontModifiers.font_bold_red("BOLD RED")
