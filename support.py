@@ -14,6 +14,8 @@ class FontModifiers:
     #####
     # Functions printing text with certain font modifications using ANSI escape codes
 
+    # Modify to return string instead of printing/make additional functions
+
     def font_bold(text):
         print(f"{FontModifiers.BOLD}{text}{FontModifiers.DEFAULT}")
 

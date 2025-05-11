@@ -164,3 +164,4 @@ cython_debug/
 chromedriver-win64/
 chromedriver.exe
 chromedriver-win64.zip
+old-chrome-drivers
