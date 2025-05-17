@@ -14,37 +14,65 @@ class FontModifiers:
     #####
     # Functions printing text with certain font modifications using ANSI escape codes
 
-    # Modify to return string instead of printing/make additional functions
+    def string_font_bold(text):
+        return f"{FontModifiers.BOLD}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_black(text):
+        return f"{FontModifiers.BLACK}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_red(text):
+        return f"{FontModifiers.RED}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_green(text):
+        return f"{FontModifiers.GREEN}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_yellow(text):
+        return f"{FontModifiers.YELLOW}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_blue(text):
+        return f"{FontModifiers.BLUE}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_magenta(text):
+        return f"{FontModifiers.MAGENTA}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_cyan(text):
+        return f"{FontModifiers.CYAN}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_white(text):
+        return f"{FontModifiers.WHITE}{text}{FontModifiers.DEFAULT}"
+
+    def string_font_bold_red(text):
+        return f"{FontModifiers.BOLD}{FontModifiers.RED}{text}{FontModifiers.DEFAULT}"
 
     def font_bold(text):
-        print(f"{FontModifiers.BOLD}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_bold(text))
 
     def font_black(text):
-        print(f"{FontModifiers.BLACK}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_black(text))
 
     def font_red(text):
-        print(f"{FontModifiers.RED}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_red(text))
 
     def font_green(text):
-        print(f"{FontModifiers.GREEN}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_green(text))
 
     def font_yellow(text):
-        print(f"{FontModifiers.YELLOW}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_yellow(text))
 
     def font_blue(text):
-        print(f"{FontModifiers.BLUE}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_blue(text))
 
     def font_magenta(text):
-        print(f"{FontModifiers.MAGENTA}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_magenta(text))
 
     def font_cyan(text):
-        print(f"{FontModifiers.CYAN}{text}{FontModifiers.DEFAULT}") 
+        print(FontModifiers.string_font_cyan(text)) 
 
     def font_white(text):
-        print(f"{FontModifiers.WHITE}{text}{FontModifiers.DEFAULT}") 
+        print(FontModifiers.string_font_white(text)) 
 
     def font_bold_red(text):
-        print(f"{FontModifiers.BOLD}{FontModifiers.RED}{text}{FontModifiers.DEFAULT}")
+        print(FontModifiers.string_font_bold_red(text))
 
     #####
 
