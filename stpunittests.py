@@ -63,7 +63,7 @@ class Tests(unittest.TestCase):
     
             self.wait_for_element(By.ID, "st-b2", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.font_bold_red("Invalid: Clicking buttons failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Invalid: Clicking buttons failed") # Rewrite? AssertionError: None?
     
     # Type and copy/paste something into a search bar
     def test_type_in_search_bar(self):
