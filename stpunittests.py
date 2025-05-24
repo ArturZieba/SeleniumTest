@@ -36,7 +36,7 @@ class Tests(unittest.TestCase):
             # Open the page with Selenium test elements
             self.wait_for_element(By.LINK_TEXT, "Selenium Test Page", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.font_bold_red("Didn't reach Selenium Test Page") # Rewrite? AssertionError: None?  
+            assert False, FontModifiers.string_font_bold_red("Didn't reach Selenium Test Page") # Rewrite?   
     
     ##### 
     
@@ -63,7 +63,7 @@ class Tests(unittest.TestCase):
     
             self.wait_for_element(By.ID, "st-b2", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red("Invalid: Clicking buttons failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Invalid: Clicking buttons failed") # Rewrite? 
     
     # Type and copy/paste something into a search bar
     def test_type_in_search_bar(self):
@@ -83,7 +83,7 @@ class Tests(unittest.TestCase):
             st_search_bar1.send_keys(Keys.CONTROL, "v")
             time.sleep(1)
         except:
-            assert False, FontModifiers.font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? 
     
     # Click through the radio buttons
     def test_click_radio_buttons(self):
@@ -94,7 +94,7 @@ class Tests(unittest.TestCase):
         
             self.wait_for_element(By.ID, "st-rb2", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.font_bold_red("Clicking radio buttons failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Clicking radio buttons failed") # Rewrite? 
     
     # Go through all of the options on a select list
     def test_select_list_select_all_options(self):
@@ -108,7 +108,7 @@ class Tests(unittest.TestCase):
                 select_element_sl0.select_by_value(option.get_attribute('value'))
                 time.sleep(1)
         except:
-            assert False, FontModifiers.font_bold_red("Selecting from a select list failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Selecting from a select list failed") # Rewrite? 
     
     # Enter log in information
     def test_use_login(self):
@@ -124,7 +124,7 @@ class Tests(unittest.TestCase):
             st_login_submit_0 = self.driver.find_element(By.ID, "st-lf0-s0").click()
             time.sleep(1)
         except:
-            assert False, FontModifiers.font_bold_red("Testing login form failed") # Rewrite? AssertionError: None?    
+            assert False, FontModifiers.string_font_bold_red("Testing login form failed") # Rewrite?     
     
     # Download an image
     def test_download_image(self):
@@ -136,7 +136,7 @@ class Tests(unittest.TestCase):
                 copyfileobj(in_stream, out_file)
             time.sleep(1)
         except:
-            assert False, FontModifiers.font_bold_red("Downloading an image failed") # Rewrite? AssertionError: None?  
+            assert False, FontModifiers.string_font_bold_red("Downloading an image failed") # Rewrite?   
     
     # Play through different audio elements
     def test_play_audio_elements(self):
@@ -154,7 +154,7 @@ class Tests(unittest.TestCase):
             self.driver.execute_script("document.querySelector('#st-af2').play();")
             time.sleep(5)
         except:
-            assert False, FontModifiers.font_bold_red("Playing audio elements failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Playing audio elements failed") # Rewrite? 
     
     # Go back to the main page
     def test_stp_to_main(self):
@@ -162,7 +162,7 @@ class Tests(unittest.TestCase):
             link_to_main_page = self.driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
             time.sleep(1)
         except:
-            assert False, FontModifiers.font_bold_red("Going back to main page failed") # Rewrite? AssertionError: None?
+            assert False, FontModifiers.string_font_bold_red("Going back to main page failed") # Rewrite? 
     
     #def finish_test_run(self):
         # Confirm execution of the whole file
@@ -178,7 +178,8 @@ class Tests(unittest.TestCase):
         
     def tearDown(self):
         FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
-        # Return information about test passing
+        # Add assertion?
+        
         self.driver.quit() # Is the browser restart on each case the best way to do it?
 
 if __name__ == '__main__':
