@@ -99,14 +99,13 @@ class Tests(unittest.TestCase):
     # Go through all of the options on a select list
     def test_select_list_select_all_options(self):
         try:
-            st_select_list = self.driver.find_element(By.ID, "st-sl0")
+            st_select_list = self.wait_for_element(By.ID, "st-sl0", EC.element_to_be_clickable)
             select_element_sl0 = Select(st_select_list)
         
             select_element_sl0_options = select_element_sl0.options
         
             for option in select_element_sl0_options:
                 select_element_sl0.select_by_value(option.get_attribute('value'))
-                time.sleep(1)
         except:
             assert False, FontModifiers.string_font_bold_red("Selecting from a select list failed") # Rewrite? 
     
