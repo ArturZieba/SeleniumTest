@@ -68,20 +68,20 @@ class Tests(unittest.TestCase):
     # Type and copy/paste something into a search bar
     def test_type_in_search_bar(self):
         try:
-            st_search_bar0 = self.driver.find_element(By.ID, "st-sb0")
+            st_search_bar0 = self.wait_for_element(By.ID, "st-sb0", EC.element_to_be_clickable)
             st_search_bar0.send_keys("Hello, World!")
-            time.sleep(1)
         
             # Copy contents of one search bar into another
+            # More clear formatting?
+            # Do something with a login button?
             st_search_bar0.send_keys(Keys.CONTROL, "a")
             st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
-            time.sleep(1)
             st_search_bar0.send_keys(Keys.CONTROL, "c")
-            time.sleep(1)
         
-            st_search_bar1 = self.driver.find_element(By.ID, "st-sb1")
+            st_search_bar1 = self.wait_for_element(By.ID, "st-sb1", EC.element_to_be_clickable)
             st_search_bar1.send_keys(Keys.CONTROL, "v")
-            time.sleep(1)
+            print("Ctrl+V")
+            
         except:
             assert False, FontModifiers.string_font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? 
     
