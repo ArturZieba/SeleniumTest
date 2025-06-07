@@ -73,14 +73,12 @@ class Tests(unittest.TestCase):
         
             # Copy contents of one search bar into another
             # More clear formatting?
-            # Do something with a login button?
             st_search_bar0.send_keys(Keys.CONTROL, "a")
             st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
             st_search_bar0.send_keys(Keys.CONTROL, "c")
         
             st_search_bar1 = self.wait_for_element(By.ID, "st-sb1", EC.element_to_be_clickable)
             st_search_bar1.send_keys(Keys.CONTROL, "v")
-            print("Ctrl+V")
             
         except:
             assert False, FontModifiers.string_font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? 
@@ -112,16 +110,17 @@ class Tests(unittest.TestCase):
     # Enter log in information
     def test_use_login(self):
         try:
-            st_login_username0 = self.driver.find_element(By.ID, "st-lf0-un0")
+            # Enter username
+            st_login_username0 = self.wait_for_element(By.ID, "st-lf0-un0", EC.element_to_be_clickable)
             st_login_username0.send_keys("BobOfficial")
-            time.sleep(1)
-        
-            st_login_password0 = self.driver.find_element(By.ID, "st-lf0-pw0")
+
+            # Enter password
+            st_login_password0 = self.wait_for_element(By.ID, "st-lf0-pw0", EC.element_to_be_clickable)
             st_login_password0.send_keys("Password123")
-            time.sleep(1)
         
-            st_login_submit_0 = self.driver.find_element(By.ID, "st-lf0-s0").click()
-            time.sleep(1)
+            # Click log in button
+            self.wait_for_element(By.ID, "st-lf0-s0", EC.element_to_be_clickable).click()
+
         except:
             assert False, FontModifiers.string_font_bold_red("Testing login form failed") # Rewrite?     
     
