@@ -158,6 +158,7 @@ class Tests(unittest.TestCase):
     def test_stp_to_main(self):
         try:
             link_to_main_page = self.driver.find_element(By.LINK_TEXT, "AZ Main Page").click()
+            # self.wait_for_element(By.LINK_TEXT, "AZ Main Page", EC.element_to_be_clickable).click()
             time.sleep(1)
         except:
             assert False, FontModifiers.string_font_bold_red("Going back to main page failed") # Rewrite? 
