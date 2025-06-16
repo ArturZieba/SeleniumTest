@@ -127,12 +127,10 @@ class Tests(unittest.TestCase):
     # Download an image
     def test_download_image(self):
         try:
-            st_image0_url = self.driver.find_element(By.ID, "st-img0").get_attribute("src")
-            time.sleep(1)
+            st_image0_url = self.wait_for_element(By.ID, "st-img0", EC.element_to_be_clickable).get_attribute("src")
         
             with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as out_file:
                 copyfileobj(in_stream, out_file)
-            time.sleep(1)
         except:
             assert False, FontModifiers.string_font_bold_red("Downloading an image failed") # Rewrite?   
     
