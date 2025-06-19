@@ -72,13 +72,11 @@ class Tests(unittest.TestCase):
             st_search_bar0.send_keys("Hello, World!")
         
             # Copy contents of one search bar into another
-            # More clear formatting?
-            st_search_bar0.send_keys(Keys.CONTROL, "a")
-            st_search_bar0.send_keys(Keys.CONTROL, Keys.SHIFT, "j")
-            st_search_bar0.send_keys(Keys.CONTROL, "c")
+            st_search_bar0.send_keys(Keys.CONTROL, "a") # Select all
+            st_search_bar0.send_keys(Keys.CONTROL, "c") # Copy
         
             st_search_bar1 = self.wait_for_element(By.ID, "st-sb1", EC.element_to_be_clickable)
-            st_search_bar1.send_keys(Keys.CONTROL, "v")
+            st_search_bar1.send_keys(Keys.CONTROL, "v") # Paste
             
         except:
             assert False, FontModifiers.string_font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? 
