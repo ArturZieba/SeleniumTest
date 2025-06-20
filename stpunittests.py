@@ -40,12 +40,7 @@ class Tests(unittest.TestCase):
     
     ##### 
     
-    # Change the unit tests to be executed one by one in a single browser window instead of launching multiple ones?
     # time.sleep value in a variable?
-    # Check unit testing
-    # Add a counter to try/except for all cases
-    # Move FontModifiers to separate file along with its test?
-    # Try/except to verify the tests executed?
     # Log to a file?
     # Add a test for lists
     # Add a test for table
@@ -156,24 +151,12 @@ class Tests(unittest.TestCase):
             self.wait_for_element(By.LINK_TEXT, "AZ Main Page", EC.element_to_be_clickable).click()
         except:
             assert False, FontModifiers.string_font_bold_red("Going back to main page failed") # Rewrite? 
-    
-    #def finish_test_run(self):
-        # Confirm execution of the whole file
-        # If statement with count of passed/failed tests?
-    #    FontModifiers.font_cyan("ALL SCRIPTS EXECUTED")
-        # if (fail_count == 0):
-        #     FontModifiers.font_green("ALL " + str(test_count) + " TEST CASES PASSED")
-        # else:
-        #     FontModifiers.font_red(str((test_count - fail_count)) + " / " + str(test_count) + " TEST CASES PASSED")
-    #    time.sleep(3)
-    
-    #    driver.quit()
         
     def tearDown(self):
         FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
         # Add assertion?
         
-        self.driver.quit() # Is the browser restart on each case the best way to do it?
+        self.driver.quit()
 
 if __name__ == '__main__':
     unittest.main()
