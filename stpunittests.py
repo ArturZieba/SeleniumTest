@@ -1,4 +1,6 @@
 # Module containing unit tests for the Selenium Test page
+# Run all test cases: python stpunittests.py (where stpunittests.py is the name of the .py file that contains these unit tests)
+# Run a specific test case: python stpunittests.py <unit test class>.<test case name> (for example: python stpunittests.py Tests.test_click_radio_buttons)
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
