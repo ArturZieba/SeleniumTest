@@ -42,7 +42,6 @@ class Tests(unittest.TestCase):
     
     ##### 
     
-    # time.sleep value in a variable?
     # Log to a file?
     # Add a test for lists
     # Add a test for table
@@ -134,16 +133,22 @@ class Tests(unittest.TestCase):
         try:
             self.driver.execute_script("document.querySelector('#st-af0').play();")
             time.sleep(0.5)
+            
             self.driver.execute_script("document.querySelector('#st-af0').volume = 0.5;")
             time.sleep(0.5)
+            
             self.driver.execute_script("document.querySelector('#st-af0').pause();")
             time.sleep(0.5)
+            
             self.driver.execute_script("document.querySelector('#st-af0').play();")
             time.sleep(4)
+            
             self.driver.execute_script("document.querySelector('#st-af1').play();")
             time.sleep(5)
+            
             self.driver.execute_script("document.querySelector('#st-af2').play();")
             time.sleep(5)
+            
         except:
             assert False, FontModifiers.string_font_bold_red("Playing audio elements failed") # Rewrite? 
     
