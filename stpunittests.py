@@ -38,7 +38,7 @@ class Tests(unittest.TestCase):
             # Open the page with Selenium test elements
             self.wait_for_element(By.LINK_TEXT, "Selenium Test Page", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red("Didn't reach Selenium Test Page") # Rewrite?   
+            assert False, FontModifiers.string_font_bold_red("setUp() function failed")  
     
     ##### 
     
@@ -131,6 +131,7 @@ class Tests(unittest.TestCase):
     # Play through different audio elements
     def test_play_audio_elements(self):
         try:
+            # Better describe what does each part does
             self.driver.execute_script("document.querySelector('#st-af0').play();")
             time.sleep(0.5)
             
@@ -160,10 +161,11 @@ class Tests(unittest.TestCase):
             assert False, FontModifiers.string_font_bold_red("Going back to main page failed") # Rewrite? 
         
     def tearDown(self):
-        FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
-        # Add assertion?
-        
-        self.driver.quit()
+        try:
+            FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
+            self.driver.quit()
+        except:
+            assert False, FontModifiers.string_font_bold_red("tearDown() function failed")  
 
 if __name__ == '__main__':
     unittest.main()
