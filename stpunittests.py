@@ -28,7 +28,7 @@ class Tests(unittest.TestCase):
 
             # Open Dev Tools
             chrome_options = Options()
-            # chrome_options.add_argument("--auto-open-devtools-for-tabs") # Potential chromedriver/chrome verisons mismatch, comment out for the time being
+            chrome_options.add_argument("--auto-open-devtools-for-tabs") # Potential chromedriver/chrome verisons mismatch, comment out for the time being
 
             service = Service(executable_path="chromedriver.exe") # chromedriver.exe downloaded from https://sites.google.com/chromium.org/driver/
             self.driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -42,6 +42,8 @@ class Tests(unittest.TestCase):
     
     ##### 
     
+    # Add function names to asserts/tearDown()
+    # Check "DevTools listening on"
     # Log to a file?
     # Add a test for lists
     # Add a test for table
