@@ -38,12 +38,11 @@ class Tests(unittest.TestCase):
             # Open the page with Selenium test elements
             self.wait_for_element(By.LINK_TEXT, "Selenium Test Page", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red("setUp() function failed")  
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: setUp() function failed")  
     
     ##### 
     
-    # Add function names to asserts/tearDown()
-    # Check "DevTools listening on"
+    # Check "DevTools listening on" print in the Console
     # Log to a file?
     # Add a test for lists
     # Add a test for table
@@ -61,7 +60,7 @@ class Tests(unittest.TestCase):
     
             self.wait_for_element(By.ID, "st-b2", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red("Invalid: Clicking buttons failed") # Rewrite? 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Clicking buttons failed")
     
     # Type and copy/paste something into a search bar
     def test_type_in_search_bar(self):
@@ -77,7 +76,7 @@ class Tests(unittest.TestCase):
             st_search_bar1.send_keys(Keys.CONTROL, "v") # Paste
             
         except:
-            assert False, FontModifiers.string_font_bold_red("Search Bar typing or copy/pasting failed") # Rewrite? 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Search Bar typing or copy/pasting failed")
     
     # Click through the radio buttons
     def test_click_radio_buttons(self):
@@ -88,7 +87,7 @@ class Tests(unittest.TestCase):
         
             self.wait_for_element(By.ID, "st-rb2", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red("Clicking radio buttons failed") # Rewrite? 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Clicking radio buttons failed")
     
     # Go through all of the options on a select list
     def test_select_list_select_all_options(self):
@@ -101,7 +100,7 @@ class Tests(unittest.TestCase):
             for option in select_element_sl0_options:
                 select_element_sl0.select_by_value(option.get_attribute('value'))
         except:
-            assert False, FontModifiers.string_font_bold_red("Selecting from a select list failed") # Rewrite? 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Selecting from a select list failed")
     
     # Enter log in information
     def test_use_login(self):
@@ -118,7 +117,7 @@ class Tests(unittest.TestCase):
             self.wait_for_element(By.ID, "st-lf0-s0", EC.element_to_be_clickable).click()
 
         except:
-            assert False, FontModifiers.string_font_bold_red("Testing login form failed") # Rewrite?     
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Testing login form failed")   
     
     # Download an image
     def test_download_image(self):
@@ -128,7 +127,7 @@ class Tests(unittest.TestCase):
             with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as out_file:
                 copyfileobj(in_stream, out_file)
         except:
-            assert False, FontModifiers.string_font_bold_red("Downloading an image failed") # Rewrite?   
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Downloading an image failed")  
     
     # Play through different audio elements
     def test_play_audio_elements(self):
@@ -153,21 +152,21 @@ class Tests(unittest.TestCase):
             time.sleep(5)
             
         except:
-            assert False, FontModifiers.string_font_bold_red("Playing audio elements failed") # Rewrite? 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Playing audio elements failed")
     
     # Go back to the main page
     def test_stp_to_main(self):
         try:
             self.wait_for_element(By.LINK_TEXT, "AZ Main Page", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red("Going back to main page failed") # Rewrite? 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Going back to main page failed") 
         
     def tearDown(self):
         try:
-            FontModifiers.font_cyan("END OF UNIT TESTS") # Rewrite? 
+            FontModifiers.font_cyan(f"FINISHED UNIT TEST: {self._testMethodName}") 
             self.driver.quit()
         except:
-            assert False, FontModifiers.string_font_bold_red("tearDown() function failed")  
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: tearDown() function failed")  
 
 if __name__ == '__main__':
     unittest.main()
