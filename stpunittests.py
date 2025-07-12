@@ -42,6 +42,7 @@ class Tests(unittest.TestCase):
     
     ##### 
     
+    # setUp/tearDown desc?
     # Check "DevTools listening on" print in the Console
     # Log to a file?
     # Add a test for lists
@@ -61,23 +62,7 @@ class Tests(unittest.TestCase):
             self.wait_for_element(By.ID, "st-b2", EC.element_to_be_clickable).click()
         except:
             assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Clicking buttons failed")
-    
-    # Type and copy/paste something into a search bar
-    def test_type_in_search_bar(self):
-        try:
-            st_search_bar0 = self.wait_for_element(By.ID, "st-sb0", EC.element_to_be_clickable)
-            st_search_bar0.send_keys("Hello, World!")
-        
-            # Copy contents of one search bar into another
-            st_search_bar0.send_keys(Keys.CONTROL, "a") # Select all
-            st_search_bar0.send_keys(Keys.CONTROL, "c") # Copy
-        
-            st_search_bar1 = self.wait_for_element(By.ID, "st-sb1", EC.element_to_be_clickable)
-            st_search_bar1.send_keys(Keys.CONTROL, "v") # Paste
-            
-        except:
-            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Search Bar typing or copy/pasting failed")
-    
+
     # Click through the radio buttons
     def test_click_radio_buttons(self):
         try:
@@ -89,36 +74,13 @@ class Tests(unittest.TestCase):
         except:
             assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Clicking radio buttons failed")
     
-    # Go through all of the options on a select list
-    def test_select_list_select_all_options(self):
+    # Check color picker
+    def test_color_picker(self):
         try:
-            st_select_list = self.wait_for_element(By.ID, "st-sl0", EC.element_to_be_clickable)
-            select_element_sl0 = Select(st_select_list)
-        
-            select_element_sl0_options = select_element_sl0.options
-        
-            for option in select_element_sl0_options:
-                select_element_sl0.select_by_value(option.get_attribute('value'))
+            print("Hi")
         except:
-            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Selecting from a select list failed")
-    
-    # Enter log in information
-    def test_use_login(self):
-        try:
-            # Enter username
-            st_login_username0 = self.wait_for_element(By.ID, "st-lf0-un0", EC.element_to_be_clickable)
-            st_login_username0.send_keys("BobOfficial")
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Using color picker failed")
 
-            # Enter password
-            st_login_password0 = self.wait_for_element(By.ID, "st-lf0-pw0", EC.element_to_be_clickable)
-            st_login_password0.send_keys("Password123")
-        
-            # Click log in button
-            self.wait_for_element(By.ID, "st-lf0-s0", EC.element_to_be_clickable).click()
-
-        except:
-            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Testing login form failed")   
-    
     # Download an image
     def test_download_image(self):
         try:
@@ -127,8 +89,8 @@ class Tests(unittest.TestCase):
             with urlopen(st_image0_url) as in_stream, open("downloaded_bober.png", "wb") as out_file:
                 copyfileobj(in_stream, out_file)
         except:
-            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Downloading an image failed")  
-    
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Downloading an image failed")
+
     # Play through different audio elements
     def test_play_audio_elements(self):
         try:
@@ -150,16 +112,59 @@ class Tests(unittest.TestCase):
             
             self.driver.execute_script("document.querySelector('#st-af2').play();")
             time.sleep(5)
-            
         except:
             assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Playing audio elements failed")
-    
+
+    # Go through all of the options on a select list
+    def test_select_list_select_all_options(self):
+        try:
+            st_select_list = self.wait_for_element(By.ID, "st-sl0", EC.element_to_be_clickable)
+            select_element_sl0 = Select(st_select_list)
+        
+            select_element_sl0_options = select_element_sl0.options
+        
+            for option in select_element_sl0_options:
+                select_element_sl0.select_by_value(option.get_attribute('value'))
+        except:
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Selecting from a select list failed")
+
     # Go back to the main page
     def test_stp_to_main(self):
         try:
             self.wait_for_element(By.LINK_TEXT, "AZ Main Page", EC.element_to_be_clickable).click()
         except:
-            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Going back to main page failed") 
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Going back to main page failed")
+
+    # Type and copy/paste something into a search bar
+    def test_type_in_search_bar(self):
+        try:
+            st_search_bar0 = self.wait_for_element(By.ID, "st-sb0", EC.element_to_be_clickable)
+            st_search_bar0.send_keys("Hello, World!")
+        
+            # Copy contents of one search bar into another
+            st_search_bar0.send_keys(Keys.CONTROL, "a") # Select all
+            st_search_bar0.send_keys(Keys.CONTROL, "c") # Copy
+        
+            st_search_bar1 = self.wait_for_element(By.ID, "st-sb1", EC.element_to_be_clickable)
+            st_search_bar1.send_keys(Keys.CONTROL, "v") # Paste   
+        except:
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Search Bar typing or copy/pasting failed")
+
+    # Enter log in information
+    def test_use_login(self):
+        try:
+            # Enter username
+            st_login_username0 = self.wait_for_element(By.ID, "st-lf0-un0", EC.element_to_be_clickable)
+            st_login_username0.send_keys("BobOfficial")
+
+            # Enter password
+            st_login_password0 = self.wait_for_element(By.ID, "st-lf0-pw0", EC.element_to_be_clickable)
+            st_login_password0.send_keys("Password123")
+        
+            # Click log in button
+            self.wait_for_element(By.ID, "st-lf0-s0", EC.element_to_be_clickable).click()
+        except:
+            assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Testing login form failed") 
         
     def tearDown(self):
         try:
