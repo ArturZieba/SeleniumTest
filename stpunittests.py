@@ -77,7 +77,18 @@ class Tests(unittest.TestCase):
     # Check color picker
     def test_color_picker(self):
         try:
-            print("Hi")
+            # Check text not updating color
+            st_color_picker = self.wait_for_element(By.ID, "st-colp0", EC.element_to_be_clickable)
+            
+            #st_color_picker.click()
+            st_color_picker.send_keys("#FF0000")
+            time.sleep(5)
+            #st_color_picker.click()
+            st_color_picker.send_keys("#00FF00")
+            time.sleep(5)
+            #st_color_picker.click()
+            st_color_picker.send_keys("#0000FF")
+            time.sleep(5)
         except:
             assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Using color picker failed")
 
