@@ -78,16 +78,33 @@ class Tests(unittest.TestCase):
     def test_color_picker(self):
         try:
             # Check text not updating color
-            st_color_picker = self.wait_for_element(By.ID, "st-colp0", EC.element_to_be_clickable)
+            st_color_picker = self.wait_for_element(By.ID, "st-colp0", EC.element_to_be_clickable) # Maybe not needed?
             
+            # Reduce code repetition, change into a function or adjust input.value by a variable
+
             #st_color_picker.click()
-            st_color_picker.send_keys("#FF0000")
+            #st_color_picker.send_keys("#FF0000")
+            self.driver.execute_script(f'''
+                                       let input = document.getElementById("st-colp0");
+                                       input.value = "#FF0000"
+                                       input.dispatchEvent(new Event("input", {{ bubbles: true }}));
+                                       ''')
             time.sleep(5)
             #st_color_picker.click()
-            st_color_picker.send_keys("#00FF00")
+            #st_color_picker.send_keys("#00FF00")
+            self.driver.execute_script(f'''
+                                       let input = document.getElementById("st-colp0");
+                                       input.value = "#00FF00"
+                                       input.dispatchEvent(new Event("input", {{ bubbles: true }}));
+                                       ''')
             time.sleep(5)
             #st_color_picker.click()
-            st_color_picker.send_keys("#0000FF")
+            #st_color_picker.send_keys("#0000FF")
+            self.driver.execute_script(f'''
+                                       let input = document.getElementById("st-colp0");
+                                       input.value = "#0000FF"
+                                       input.dispatchEvent(new Event("input", {{ bubbles: true }}));
+                                       ''')
             time.sleep(5)
         except:
             assert False, FontModifiers.string_font_bold_red(f"{self._testMethodName}: Using color picker failed")
